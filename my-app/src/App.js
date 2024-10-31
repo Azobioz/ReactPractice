@@ -5,21 +5,36 @@ import reactImage from "./img/React.png"
 
 class App extends React.Component {
 
-    helpText = "Help text"
+    constructor(props) { // Состояние для того, чтобы динамически менять данные
+        super(props);
+        this.state = {
+            helpText: "Help Text",
+            userData: ""
+        }
+
+        this.inputClick = this.inputClick.bind(this)
+
+    }
+
 
     render() {
         return <div className="name">
             <Header title="Шапка" name="123"/>
             <Header title="Сайта"/>
-            <h1>{this.helpText}</h1>
-            <input placeholder={this.helpText}
+            <h1>{this.state.helpText}</h1>
+            <h2>{this.state.userData}</h2>
+            <input placeholder={this.state.helpText}
+                   onChange={event=> this.setState({userData: event.target.value})}
                    onClick={this.inputClick} onMouseOver={this.mouseOver}/>
-            <p>{this.helpText === "Help text" ? "Yes" : "No"}</p>
+            <p>{this.state.helpText === "Help text" ? "Yes" : "No"}</p>
         <Image image={reactImage} />
     </div>
     }
 
-    inputClick() {console.log("Clicked")}
+    inputClick() {
+        this.setState({helpText: "Changed"})
+        console.log("Clicked")
+    }
     mouseOver() {console.log("MouseOver")}
 
 }
