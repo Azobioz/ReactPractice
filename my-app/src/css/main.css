@@ -36,3 +36,48 @@ main .user {
     background-color: rgba(71, 105, 119, 0.93);
     padding: 20px;
 }
+
+main .delete-icon {
+    float: right;
+    color: #bf2626;
+    cursor: pointer;
+    transform: scale(2);
+    font-size: 15px;
+}
+
+main .edit-icon {
+    float: right;
+    margin-right: 25px;
+    color: #3d4eaf;
+    cursor: pointer;
+    transform: scale(3);
+    font-size: 10px;
+}
+
+main .delete-icon:hover,
+main .edit-icon:hover {
+    opacity: 0.5;
+}
+
+aside form input,
+aside form textarea,
+aside form button {
+    width: 90%;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 100;
+    margin-bottom: 10px;
+    border: 0;
+    background: #222;
+    outline: none;
+    font-size: 15px;
+}
+
+aside form button {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+aside form button:hover {
+    transform: scale(1.1);
+}
