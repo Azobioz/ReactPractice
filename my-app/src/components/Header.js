@@ -7,7 +7,6 @@ const Header = ({title}) => {
             {title}
         </header>)
 
-
 }
 
 export default Header
