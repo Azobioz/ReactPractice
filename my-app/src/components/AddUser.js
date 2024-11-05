@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-const AddUser = ({addUser}) => {
+const AddUser = ({onAdd}) => {
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -9,11 +9,12 @@ const AddUser = ({addUser}) => {
 
 
     const handleSubmit = () => {
-        addUser({firstname: firstName, lastname: lastName, age: Number(age), hobby: hobby })
+        onAdd({firstname: firstName, lastname: lastName, age: Number(age), hobby: hobby })
+
     }
 
     return (
-        <form>
+        <form >
             <input
                 placeholder="First Name"
                    onChange={(e) => setFirstName(e.target.value)}
@@ -30,7 +31,7 @@ const AddUser = ({addUser}) => {
                 placeholder="Hobby"
                 onChange={(e) => setHobby(e.target.value)}
             ></textarea>
-            <button type="button" onSubmit={handleSubmit} >Add User</button>
+            <button type="button" onClick={handleSubmit}>Add User</button>
         </form>
 
 
