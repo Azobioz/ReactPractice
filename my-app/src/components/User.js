@@ -7,7 +7,7 @@ const User = ({user}) => {
         <SlTrash className="delete-icon"/>
         <SlNote className="edit-icon"/>
         <h3>{user.firstname} {user.lastname}</h3>
-        <p>{user.hobby}</p>
+        <p>{user.hobby} {user.age} year old</p>
     </div>)
 
 }
