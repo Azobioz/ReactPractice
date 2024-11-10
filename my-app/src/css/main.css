@@ -59,9 +59,9 @@ main .edit-icon:hover {
     opacity: 0.5;
 }
 
-aside form input,
-aside form textarea,
-aside form button {
+form input,
+form textarea,
+form button {
     width: 90%;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 100;
@@ -72,12 +72,27 @@ aside form button {
     font-size: 15px;
 }
 
-aside form button {
+form button {
     width: 100px;
     cursor: pointer;
     transition: transform 500ms ease;
 }
 
-aside form button:hover {
+form button:hover {
     transform: scale(1.1);
 }
+
+.user form {
+    margin-top: 20px;
+}
+
+.user form input,
+.user form textarea,
+.user form button {
+    background: #133;
+}
+
+.user form button:hover {
+    transform: scale(1.01);
+}
+

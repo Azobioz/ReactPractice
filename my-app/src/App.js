@@ -23,6 +23,17 @@ const App =  () => {
         }
     ])
 
+    const deleteUser = (id) => {
+        setUsers(users.filter((el) => el.id !== id))
+    }
+
+    const editUser = (user) => {
+        let allUsers = [...users]
+        allUsers[user.id - 1] = user
+        setUsers(allUsers)
+        console.log(allUsers)
+    }
+
     const addUser = (user) => {
         const id = users.length + 1
         setUsers([...users, {id, ...user}])
@@ -31,7 +42,7 @@ const App =  () => {
     return (<div>
         <Header title="List of users"/>
         <main>
-            <Users users={users}/>
+            <Users onEdit={editUser} users={users} onDelete={deleteUser}/>
         </main>
         <aside>
             <AddUser onAdd={addUser}/>

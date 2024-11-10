@@ -2,12 +2,12 @@ import React from "react"
 import User from "./User"
 
 
-const Users = ({users}) => {
+const Users = ({onEdit, users, onDelete}) => {
 
     if (users.length > 0) {
         return (<div>
                 {users.map((el) => (
-                <User key={el.id} user={el}/>
+                <User onEditUser={onEdit} onDeleteUser={onDelete} key={el.id} user={el}/>
             ))}
         </div>)
     }
